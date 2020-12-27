@@ -10,6 +10,16 @@ const routes = [
     name: 'Home',
     component: Home,
   },
+  {
+    path: '/homestay',
+    name: 'Homestay',
+    component: () => import('../views/Homestay'),
+  },
+  {
+    path: '/homestay/:id',
+    name: 'Detail',
+    component: () => import('../views/Detail.vue'),
+  },
 ];
 
 const router = new VueRouter({
@@ -17,7 +27,8 @@ const router = new VueRouter({
   scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
       return { selector: to.hash };
-    } if (savedPosition) {
+    }
+    if (savedPosition) {
       return savedPosition;
     }
     return { x: 0, y: 0 };
