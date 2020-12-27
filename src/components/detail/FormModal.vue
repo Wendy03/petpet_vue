@@ -290,10 +290,11 @@
                 <p class="text-primary">
                   您可以在會員頁找到您的預約資料並修改或取消預約。
                 </p>
-                <router-link to="/login"
-                             class="btn btn-secondary btn-block">
+                <button type="button"
+                        @click.prevent="submitForm()"
+                        class="btn btn-secondary btn-block">
                   前往會員頁
-                </router-link>
+                </button>
               </div>
             </div>
           </div>
@@ -304,6 +305,8 @@
 </template>
 
 <script>
+import $ from 'jquery';
+
 export default {
   props: {
     img: {
@@ -349,6 +352,10 @@ export default {
       if (this.currentStep > 1) {
         this.currentStep -= 1;
       }
+    },
+    submitForm() {
+      this.$router.push('/login');
+      $('#reservationModal').modal('hide');
     },
   },
 };
