@@ -9,7 +9,7 @@
         <p class="text-primary">{{ process.title }}</p>
         <img :src="process.processImg"
              alt="index-10"
-             class="img-fluid" />
+             class="img-fluid w-100" />
       </li>
     </ul>
   </div>
